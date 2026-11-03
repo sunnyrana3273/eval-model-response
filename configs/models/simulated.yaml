@@ -1,0 +1,9 @@
+# Seeded stochastic policy with synthetic hidden states (see docs/methodology.md).
+# Runs on CPU in seconds. Results validate the pipeline, not real-model behaviour.
+adapter: simulated
+name: simulated-policy
+revision: v1
+activation_signal: 1.0   # risk information present in activations (positive control)
+signal_peak_layer: 5
+n_layers: 8
+hidden_dim: 64

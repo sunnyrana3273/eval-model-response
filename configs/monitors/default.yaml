@@ -1,0 +1,4 @@
+horizons: [1, 3, 5]          # predict a failure within the next h decision steps
+c_grid: [0.01, 0.1, 1.0, 10.0]
+probe_pca: null              # e.g. 64 for wide real-model activations
+class_weight: balanced

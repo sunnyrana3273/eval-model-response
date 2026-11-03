@@ -1,0 +1,15 @@
+# Full simulated study: 33 templates x all variants x 3 seeds (~1,370 trajectories).
+name: main-simulated
+seed: 0
+model: ../models/simulated.yaml
+tasks:
+  _base: ../environments/all.yaml
+  seeds: [0, 1, 2]
+monitors: ../monitors/default.yaml
+evaluation:
+  bootstrap: 1000
+  primary_horizon: 3
+interventions:
+  monitor: combined
+  horizon: 3
+  seeds: [100, 101]

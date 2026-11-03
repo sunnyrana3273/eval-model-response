@@ -1,0 +1,15 @@
+# Fast end-to-end check (~1 minute on CPU). Used by the README quick start and CI.
+name: smoke
+seed: 0
+model: ../models/simulated.yaml
+tasks:
+  _base: ../environments/all.yaml
+  strengths: [none, medium, high]
+  placements: [early]
+  difficulties: [hard]
+  seeds: [0, 1]
+monitors: ../monitors/default.yaml
+evaluation:
+  bootstrap: 200
+interventions:
+  seeds: [100]

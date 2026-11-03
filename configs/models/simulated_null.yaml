@@ -1,0 +1,8 @@
+# Negative control: activations carry task/progress nuisance but no risk information.
+# A correct pipeline must find no probe/combined advantage over behaviour here.
+adapter: simulated
+name: simulated-policy-null
+revision: v1
+activation_signal: 0.0
+n_layers: 8
+hidden_dim: 64

@@ -1,0 +1,10 @@
+# Negative control: identical to main_simulated but activations carry no risk signal.
+name: null-control
+seed: 0
+model: ../models/simulated_null.yaml
+tasks:
+  _base: ../environments/all.yaml
+  seeds: [0, 1, 2]
+monitors: ../monitors/default.yaml
+interventions:
+  enabled: false

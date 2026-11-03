@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+build/
+dist/
+
+# Secrets
+.env
+*.env
+
+# Experiment outputs (regenerate with `afo run`; small samples live in datasets/samples)
+experiments/*
+!experiments/README.md
+
+# Dashboard
+dashboard/frontend/node_modules/
+dashboard/frontend/dist/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/

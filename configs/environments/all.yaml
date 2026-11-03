@@ -1,0 +1,6 @@
+templates_dir: datasets/templates
+environments: [goal_drift, prompt_injection, tool_safety]
+strengths: [none, low, medium, high]
+placements: [early, late]
+difficulties: [easy, hard]
+seeds: [0]

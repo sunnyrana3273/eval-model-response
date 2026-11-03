@@ -1,0 +1,19 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install (CPU torch for activation tests)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[hf,dashboard,dev]"
+      - run: afo validate-templates
+      - run: pytest -q
+      - run: afo run configs/experiments/smoke.yaml --exp-dir experiments/smoke

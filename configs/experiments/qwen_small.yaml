@@ -1,0 +1,18 @@
+# Real-model study. Needs `pip install -e ".[hf]"`; a GPU is recommended.
+name: qwen-0.5b
+seed: 0
+model: ../models/qwen2.5-0.5b-instruct.yaml
+tasks:
+  _base: ../environments/all.yaml
+  seeds: [0, 1]
+agent:
+  max_steps: 10
+collection:
+  activations: {enabled: true, layers: [4, 8, 12, 16, 20, 23], strategy: last}
+monitors:
+  _base: ../monitors/default.yaml
+  probe_pca: 64
+interventions:
+  monitor: combined
+  horizon: 3
+  seeds: [100]

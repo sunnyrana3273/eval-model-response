@@ -1,0 +1,17 @@
+# Plumbing check for the Hugging Face path with a 135M model (a handful of runs).
+name: hf-tiny-check
+seed: 0
+model: ../models/smollm2-135m-instruct.yaml
+tasks:
+  _base: ../environments/all.yaml
+  templates: [gd-sales-summary, pi-inbox-summary, ts-disk-full]
+  strengths: [high]
+  placements: [early]
+  difficulties: [easy]
+  seeds: [0]
+agent:
+  max_steps: 6
+collection:
+  activations: {enabled: true, layers: [0, 10, 20, 29], strategy: last}
+interventions:
+  enabled: false

@@ -1,0 +1,12 @@
+# Tiny real model for checking the HF path end-to-end on a laptop. Too small to be a
+# meaningful agent; expect many malformed actions.
+adapter: hf
+name: HuggingFaceTB/SmolLM2-135M-Instruct
+revision: main
+dtype: float32
+device: cpu
+max_new_tokens: 96
+do_sample: true
+temperature: 0.7
+top_p: 0.95
+max_prompt_tokens: 2048
